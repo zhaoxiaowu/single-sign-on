@@ -13,6 +13,8 @@ import java.util.Arrays;
 
 /**
  * @author wuhongyun
+ *
+ *  @Inherited：允许子类继承父类的注解。
  */
 public class TestMain {
   public static void main(String[] args) {
