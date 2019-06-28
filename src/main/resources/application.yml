@@ -1,6 +1,6 @@
 server:
   port: 9999
-  display-name: signle-sign-on
+  display-name: las
 eureka:
   client:
     serviceUrl:
@@ -19,4 +19,4 @@ dcommons-token:
 # 登录用户名 密码
 login:
   username: admin
-  password: 123
+  password: 123456
