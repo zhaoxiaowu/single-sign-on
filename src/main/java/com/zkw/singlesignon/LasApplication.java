@@ -19,10 +19,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 //@EnableDiscoveryClient
 @EnableFeignClients
 @EnableSwagger2
-public class SingleSignOnApplication {
+public class LasApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SingleSignOnApplication.class, args);
+        SpringApplication.run(LasApplication.class, args);
     }
 
     //配置swagger
