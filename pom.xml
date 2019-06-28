@@ -26,6 +26,7 @@
         <swagger.version>1.5.18</swagger.version>
         <springfox-swagger.version>2.9.0</springfox-swagger.version>
         <springloaded>1.2.6.RELEASE</springloaded>
+        <apache-commons.version>3.4</apache-commons.version>
     </properties>
 
     <dependencies>
@@ -99,6 +100,11 @@
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
             <version>${springfox-swagger.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${apache-commons.version}</version>
         </dependency>
     </dependencies>
 
