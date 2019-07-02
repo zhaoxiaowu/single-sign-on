@@ -85,6 +85,13 @@
             <artifactId>java-jwt</artifactId>
             <version>${java-jwt.version}</version>
         </dependency>
+        <!-- 热部署 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <version>${spring-boot.version}</version>
+        </dependency>
+
         <!-- swagger -->
         <dependency>
             <groupId>io.swagger</groupId>

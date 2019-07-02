@@ -25,7 +25,9 @@ public class LasApplication {
         SpringApplication.run(LasApplication.class, args);
     }
 
-    //配置swagger
+    /**
+     * 配置swagger
+     */
     @Bean
     public Docket swaggerDocket() {
         return new Docket(DocumentationType.SWAGGER_2).apiInfo(buildApiInfo()).select()
