@@ -11,8 +11,8 @@
     <groupId>com.zkw</groupId>
     <artifactId>single-sign-on</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>single-sign-on</name>
-    <description>单点登录</description>
+    <name>las</name>
+    <description>las</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -27,6 +27,7 @@
         <springfox-swagger.version>2.9.0</springfox-swagger.version>
         <springloaded>1.2.6.RELEASE</springloaded>
         <apache-commons.version>3.4</apache-commons.version>
+        <lombok.version>1.16.10</lombok.version>
     </properties>
 
     <dependencies>
@@ -91,8 +92,14 @@
             <artifactId>spring-boot-devtools</artifactId>
             <version>${spring-boot.version}</version>
         </dependency>
+        <!-- lombok -->
+        <dependency>
+          <groupId>org.projectlombok</groupId>
+          <artifactId>lombok</artifactId>
+          <version>${lombok.version}</version>
+        </dependency>
 
-        <!-- swagger -->
+      <!-- swagger -->
         <dependency>
             <groupId>io.swagger</groupId>
             <artifactId>swagger-annotations</artifactId>
