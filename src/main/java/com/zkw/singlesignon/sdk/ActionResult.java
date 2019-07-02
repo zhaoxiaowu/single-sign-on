@@ -1,5 +1,7 @@
 package com.zkw.singlesignon.sdk;
 
+import org.springframework.http.HttpStatus;
+
 /**
  * 请求结果响应
  *
@@ -8,7 +10,7 @@ package com.zkw.singlesignon.sdk;
 public class ActionResult<T> {
     public static final ActionResult OK = new ActionResult();
     private boolean success =true;
-    private String code;
+    private String code = HttpStatus.OK.toString();
     private String message;
     private T data;
 

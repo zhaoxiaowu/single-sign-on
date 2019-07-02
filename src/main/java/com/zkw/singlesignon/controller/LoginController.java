@@ -38,9 +38,9 @@ public class LoginController {
     @PostMapping(value = "login")
     @ApiOperation(value = "登录验证", notes = "登录验证")
     public ActionResult login(HttpServletRequest request, HttpServletResponse response,@RequestBody User user) throws Exception{
-        if(!(username.equals(user.getUsername()) && password.equals(user.getPassword()))) {
-            return ActionResult.fail("用户名或密码错误");
-            //throw new Exception("用户名密码错误");
+        if(!(username.equals(user.getUsername()) &&  password.equals(user.getPassword()))) {
+            //return ActionResult.fail("用户名或密码错误");
+            throw new Exception("用户名密码错误");
         }
         // 签发token
         setAuthToken(request, response, user);

@@ -22,6 +22,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 
 import static java.lang.String.format;
 
@@ -39,15 +40,27 @@ public class SpringExceptionHandler {
 
     log.error(format("请求%s失败",request.getRequestURI()),e);
 
+    ErrorResult result = new ErrorResult();
 
-    response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
+    if (e instanceof LogoutException){
+      result.setCode("1001");
+    } else {
+      result.setCode("500");
+    }
+
+    //response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
     response.setCharacterEncoding("UTF-8");
     response.setContentType("application/json");
-    ErrorResult result = new ErrorResult();
+
+    result.setSuccess(false);
     result.setMessage(decodeErrorMessage(e));
     result.setTraceId(MDC.get("trace_id"));
     //response.getWriter().print(JsonUtil.objectToJson(result));
-    response.getWriter().print(JsonUtil.objectToJson(result));
+
+    //使用outputStream输出，printWriter存在问题
+    String json = JsonUtil.objectToJson(result);
+    response.getOutputStream().write(json.getBytes(StandardCharsets.UTF_8));
+    response.getOutputStream().flush();
   }
 
   private String decodeErrorMessage(Exception e) {

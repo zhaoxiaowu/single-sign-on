@@ -33,7 +33,7 @@ public class LasApplication {
                 .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class)).build();
     }
     private ApiInfo buildApiInfo() {
-        return new ApiInfoBuilder().title("SingleSignOn.API").version("1.0").build();
+        return new ApiInfoBuilder().title("LAS.API").version("1.0").build();
     }
 //    @Bean
 //    public Docket swaggerDocket() {
